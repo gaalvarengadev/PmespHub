@@ -1,0 +1,16 @@
+
+:root {
+
+    --azul-escuro: #0A192F;
+    --azul-medio: #1B365D;
+    --azul-claro: #E6F0F8;
+    --fundo-site: #F4F7F9;
+    --branco: #FFFFFF;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: "Montserrat",sans-serif;
+}
