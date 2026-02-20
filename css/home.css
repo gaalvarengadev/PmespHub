@@ -36,6 +36,7 @@ header {
 .linksbar a:hover {
     transform: scale(0.95);
 }
+
 #logo {
     display: flex;
     margin-left: 50px;
@@ -44,19 +45,16 @@ header {
 }
 
 .linksbar {
-
     display: flex;
     gap: 40px;
     margin-right: 50px;
     transition: 2 ease;
-
 }
 
 .hero {
     margin-top: 50px;
     padding-left: 60px;
-        line-height: 1.5;
-
+    line-height: 1.5;
 }
 
 #sub {
@@ -86,7 +84,6 @@ h3 {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    
 }
 
 .card {
@@ -94,14 +91,12 @@ h3 {
     flex-direction: column;
     gap: 10px;
     align-items: center;
-    border: 2px solid #1B365D; 
-    border-radius: 12px;       
-    padding: 30px;             
-    background-color: #FFFFFF; 
-    
+    border: 2px solid #1B365D;
+    border-radius: 12px;
+    padding: 30px;
+    background-color: #FFFFFF;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    
-    transition: transform 0.3s ease; 
+    transition: transform 0.3s ease;
     width: 200px;
 }
 
@@ -114,7 +109,6 @@ h3 {
 }
 
 .card input {
-
     border: 0px;
     background: #1B365D;
     color: #fff;
@@ -123,7 +117,6 @@ h3 {
     border-radius: 12px;
     cursor: pointer;
     transition: 0.5s;
-
 }
 
 .card input:hover {
@@ -138,7 +131,6 @@ h3 {
 footer {
     background: #0A192F;
     min-height: 72px;
-
 }
 
 .botao-ver-mais {
@@ -148,7 +140,7 @@ footer {
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
-    text-decoration: none; 
+    text-decoration: none;
     font-weight: bold;
     text-align: center;
     transition: transform 0.2s;
@@ -157,4 +149,107 @@ footer {
 .botao-ver-mais:hover {
     transform: scale(1.05);
     background-color: #0A192F;
+}
+
+
+/*pop up*/
+
+
+/* garante que o dialog fique no centro */
+
+#sexoDialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    padding: 20px;
+    max-width: 90vw;
+    border: 2px solid #1B365D;
+    border-radius: 12px;
+}
+
+#titulo-popup {
+    margin-top: 20px;
+    text-align: center;
+    color: #1B365D;
+    font-size: 30px;
+}
+
+
+/* fundo escurecido atrás do popup */
+
+#sexoDialog::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.btns-popup {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 40px;
+    align-items: center;
+}
+
+.btns-popup button {
+    background-color: #1B365D;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    transition: transform 0.2s;
+    margin: 10px;
+}
+
+.btns-popup button:hover {
+    transform: scale(1.05);
+    background-color: #0A192F;
+}
+
+
+/*pagina do TAF Masculinos*/
+
+.introduction {
+    margin-left: 50px;
+    text-align: left;
+    width: 500px;
+}
+
+.introduction h2 {
+    margin-bottom: 20px;
+    color: #1B365D;
+}
+
+#titleExercise {
+    text-align: left;
+    color: #1B365D;
+    margin-left: 50px;
+}
+
+
+/* cards proprios da pagina*/
+
+.cards-container-TafM {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-around;
+    background-color: #1B365D;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+.card-TafM {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 60px;
+}
+
+.card-TafM a {
+    background: #fff;
+    color: #000;
 }

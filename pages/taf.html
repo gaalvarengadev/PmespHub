@@ -6,12 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="icon" href="assets/img/logo3.png">
     <link rel="stylesheet" href="/css/home.css">
-    <script src="script.js" defer></script>
+    <script src="/js/main.js" defer></script>
     <title>PmespHub</title>
 </head>
 
@@ -26,21 +25,34 @@
 
             <div class="linksbar">
                 <a href="index.html">Home</a>
-                <a href="/contato.html">Contato</a>
-                <a href="/ajuda.html">Ajuda</a>
+                <a href="contato.html">Contato</a>
             </div>
         </nav>
     </header>
 
     <main>
         <section class="hero">
-            <h1>Prepare seu corpo para a Gloriosa <span id="sub">
-                    <h3>PMESP</h3>
+            <h1>Domine o TAF e garanta seu lugar na PMESP
+                <span id="sub">
                 </span></h1>
-            <p>O guia definitivo para transformar seu condicionamento físico no padrão exigido pela Gloriosa</p>
-             <a href="taf.html" class="botao-ver-mais">Ver Mais</a>
+            <p>O guia definitivo para transformar seu condicionamento físico no padrão exigido pela PMESP</p>
+            <a href="taf.html" class="iniciar" id="verMais">Ver Mais</a>
         </section>
+
+        <!--dialog-->
+        <dialog id="sexoDialog">
+            <h3 id="titulo-popup">Selecione seu sexo</h3>
+
+            <div class="btns-popup">
+                <button type="button" id="btnMasculino">Homem</button>
+                <button type="button" id="btnFeminino">Mulher</button>
+
+                <button type="button" id="btnCancelar">Cancelar</button>
+            </div>
+
+        </dialog>
+
     </main>
-    
+
 
 </html>
