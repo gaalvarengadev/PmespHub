@@ -237,19 +237,35 @@ footer {
     flex-direction: row;
     gap: 20px;
     justify-content: space-around;
-    background-color: #1B365D;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-}
+
 
 .card-TafM {
     text-align: center;
     display: flex;
     flex-direction: column;
     padding: 40px 60px;
+    gap: 20px;
+    background-color: #1B365D;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
 }
 
 .card-TafM a {
     background: #fff;
     color: #000;
+}
+
+/*configuração das imagens dos cards dos exercicios*/
+
+.exercicio {
+    width: 100px;
+}
+
+
+/*pagina taf main*/
+
+#introducao-mainTaf {
+    margin-top: 30px;
+    width: 600px;
 }
