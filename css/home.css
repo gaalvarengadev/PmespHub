@@ -1,435 +1,494 @@
-/* Logo da pagina */
+/* ==========================================================
+   0) TOKENS / VARIÁVEIS (cores, sombras, etc.)
+   ========================================================== */
+:root {
+  --bg-page: #F4F7F9;
 
+  --color-primary: #1B365D;
+  --color-primary-dark: #0A192F;
+
+  --color-text: #4A5568;
+  --color-white: #FFFFFF;
+
+  --shadow-sm: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+  --radius-sm: 5px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  --transition-fast: 0.2s;
+  --transition-med: 0.3s ease;
+}
+
+/* ==========================================================
+   1) BASE / RESET LEVE
+   ========================================================== */
 body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background: #F4F7F9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-page);
 }
 
 main {
-    margin: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 100px;
+  margin: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
 }
 
 a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-}
-
-header {
-    background: #0A192F;
-    color: #fff;
-    padding: 10px;
-}
-
-.navbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.linksbar a:hover {
-    transform: scale(0.95);
-}
-
-#logo {
-    display: flex;
-    margin-left: 50px;
-    width: 70px;
-    height: 70px;
-}
-
-.linksbar {
-    display: flex;
-    gap: 40px;
-    margin-right: 50px;
-    transition: 2 ease;
-}
-
-.hero {
-    margin-top: 50px;
-    padding-left: 60px;
-    line-height: 1.5;
-}
-
-#sub {
-    display: block;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
 }
 
 h1 {
-    margin-top: 100px;
-    margin-bottom: 10px;
-    color: #1B365D;
-    font-size: 40px;
+  margin-top: 100px;
+  margin-bottom: 10px;
+  color: var(--color-primary);
+  font-size: 40px;
 }
 
 h3 {
-    font-size: 50px;
+  font-size: 50px;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.cards-container {
-    margin: 30px 60px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.card {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    border: 2px solid #1B365D;
-    border-radius: 12px;
-    padding: 30px;
-    background-color: #FFFFFF;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    width: 200px;
-}
-
-.card:hover {
-    transform: scale(1.05);
-}
-
-.card img {
-    width: 60px;
-}
-
-.card input {
-    border: 0px;
-    background: #1B365D;
-    color: #fff;
-    font-weight: bold;
-    padding: 10px;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: 0.5s;
-}
-
-.card input:hover {
-    transform: scale(0.95);
-    transition: 0.6s;
-}
-
-.card p {
-    font-weight: 500;
+/* ==========================================================
+   2) LAYOUT GLOBAL (Header / Footer)
+   ========================================================== */
+header {
+  background: var(--color-primary-dark);
+  color: #fff;
+  padding: 10px;
 }
 
 footer {
-    background: #0A192F;
-    min-height: 72px;
+  background: var(--color-primary-dark);
+  min-height: 72px;
 }
 
+/* ==========================================================
+   3) COMPONENTES - NAVBAR / LOGO / LINKS
+   ========================================================== */
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+#logo {
+  display: flex;
+  margin-left: 50px;
+  width: 70px;
+  height: 70px;
+}
+
+.linksbar {
+  display: flex;
+  gap: 40px;
+  margin-right: 50px;
+  transition: 2 ease; /* mantido como estava (mas isso é inválido sem propriedade/tempo) */
+}
+
+.linksbar a:hover {
+  transform: scale(0.95);
+}
+
+/* ==========================================================
+   4) SEÇÕES - HOME (Hero + Cards genéricos)
+   ========================================================== */
+.hero {
+  margin-top: 50px;
+  padding-left: 60px;
+  line-height: 1.5;
+}
+
+#sub {
+  display: block;
+}
+
+/* Cards (genéricos) */
+.cards-container {
+  margin: 30px 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  padding: 30px;
+
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-sm);
+
+  transition: transform var(--transition-med);
+  width: 200px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 60px;
+}
+
+.card p {
+  font-weight: bold;
+  color: #1B365D;
+}
+
+/* “Botão” que hoje é um input dentro do card */
+.card input {
+  border: 0;
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: bold;
+
+  padding: 10px;
+  border-radius: var(--radius-md);
+
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.card input:hover {
+  transform: scale(0.95);
+  transition: 0.6s;
+}
+
+/* Botão “ver mais” (link) */
 .botao-ver-mais {
-    display: flex;
-    flex-direction: column;
-    background-color: #1B365D;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    text-align: center;
-    transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--color-primary);
+  color: white;
+
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+
+  transition: transform var(--transition-fast);
 }
 
 .botao-ver-mais:hover {
-    transform: scale(1.05);
-    background-color: #0A192F;
+  transform: scale(1.05);
+  background-color: var(--color-primary-dark);
 }
 
-
-/*pop up*/
-
+/* ==========================================================
+   5) COMPONENTES - POPUPS (Dialog)
+   Observação: havia muita repetição entre #sexoDialog e #tipoDialog
+   ========================================================== */
 
 /* garante que o dialog fique no centro */
-
-#sexoDialog {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: none;
-    padding: 20px;
-    max-width: 90vw;
-    border: 2px solid #1B365D;
-    border-radius: 12px;
-}
-
-#titulo-popup {
-    margin-top: 20px;
-    text-align: center;
-    color: #1B365D;
-    font-size: 30px;
-}
-
-
-/* fundo escurecido atrás do popup */
-
-#sexoDialog::backdrop {
-    background: rgba(0, 0, 0, 0.6);
-}
-
-.btns-popup {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 40px;
-    align-items: center;
-}
-
-.btns-popup button {
-    background-color: #1B365D;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    text-align: center;
-    transition: transform 0.2s;
-    margin: 10px;
-}
-
-.btns-popup button:hover {
-    transform: scale(1.05);
-    background-color: #0A192F;
-}
-
-
-/*pop up do tipo*/
-
-
-/* garante que o dialog fique no centro */
-
+#sexoDialog,
 #tipoDialog {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: none;
-    padding: 20px;
-    max-width: 90vw;
-    border: 2px solid #1B365D;
-    border-radius: 12px;
-}
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-#titulo-popup {
-    margin-top: 20px;
-    text-align: center;
-    color: #1B365D;
-    font-size: 30px;
-}
+  border: none;
+  padding: 20px;
+  max-width: 90vw;
 
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-md);
+}
 
 /* fundo escurecido atrás do popup */
-
+#sexoDialog::backdrop,
 #tipoDialog::backdrop {
-    background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.6);
 }
 
+/* Título do popup
+   (ID repetido no CSS original; mantido 1 vez apenas) */
+#titulo-popup {
+  margin-top: 20px;
+  text-align: center;
+  color: var(--color-primary);
+  font-size: 30px;
+}
+
+/* Botões dentro do popup */
 .btns-popup {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 40px;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 40px;
+  align-items: center;
 }
 
 .btns-popup button {
-    background-color: #1B365D;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    text-align: center;
-    transition: transform 0.2s;
-    margin: 10px;
+  background-color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+  color: white;
+
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+
+  transition: transform var(--transition-fast);
+  margin: 10px;
 }
 
 .btns-popup button:hover {
-    transform: scale(1.05);
-    background-color: #0A192F;
+  transform: scale(1.05);
+  background-color: var(--color-primary-dark);
 }
 
-
-/*pagina do TAF Masculinos*/
-
+/* ==========================================================
+   6) PÁGINA - TAF MASCULINO (listagem/intro/cards)
+   ========================================================== */
 .introduction {
-    margin-left: 50px;
-    text-align: left;
-    width: 500px;
+  margin-left: 50px;
+  text-align: left;
+  width: 500px;
 }
 
 .introduction h2 {
-    margin-bottom: 20px;
-    color: #1B365D;
+  margin-bottom: 20px;
+  color: var(--color-primary);
 }
 
 #titleExercise {
-    text-align: left;
-    color: #1B365D;
-    margin-left: 50px;
+  text-align: left;
+  color: var(--color-primary);
+  margin-left: 50px;
 }
 
-
-/* cards proprios da pagina*/
-
+/* cards próprios da página */
 .cards-container-TafM {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: space-around;
 }
 
 .card-TafM {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    padding: 40px 60px;
-    gap: 20px;
-    background-color: #1B365D;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-    transition: transform 0.3s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+
+  padding: 40px 60px;
+  gap: 20px;
+
+  background-color: #fff;
+  border: 2px solid var(--color-primary);
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-md);
+
+  transition: transform var(--transition-med);
 }
 
 .card-TafM:hover {
-    transform: scale(1.05);
-    transition: 0.6s;
+  transform: scale(1.05);
+  transition: 0.6s;
 }
 
 .card-TafM a {
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    text-align: center;
-    transition: transform 0.2s;
+  background-color: #1B365D;
+
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+
+  transition: transform var(--transition-fast);
 }
 
 .card-TafM a:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .title-card {
-    font-weight: bold;
-    font-size: 18px;
+  font-weight: bold;
+  font-size: 18px;
+  color: var(--color-primary);
 }
 
-
-/*configuração das imagens dos cards dos exercicios*/
-
+/* configuração das imagens dos cards dos exercicios */
 .exercicio {
-    width: 100px;
+  width: 100px;
 }
 
-
-/*pagina taf main*/
-
+/* pagina taf main */
 #introducao-mainTaf {
-    margin-top: 30px;
-    width: 600px;
+  margin-top: 30px;
+  width: 600px;
 }
 
 
-/*Pagina TAF MAsculino Soldado*/
-
+/* ==========================================================
+   7) PÁGINA - TAF MASCULINO SOLDADO (card fixo / critérios)
+   ========================================================== */
 .fundo-pagina-TafSoldado {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card-TafM-fixo {
-    width: 100%;
-    max-width: 1400px;
-    height: 350px;
-    display: flex;
-    background: #ffffff;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    justify-content: space-around;
-    margin: 10px 100px;
+  width: 100%;
+  max-width: 1400px;
+  height: 350px;
+
+  display: flex;
+  justify-content: space-around;
+
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+
+  box-shadow: var(--shadow-md);
+
+  margin: 10px 100px;
 }
 
 .container-texto-card {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
 }
 
 .card-criterios {
-    display: flex;
-    flex-direction: row;
-}
-
-.lista-execucao li {
-    padding: 20px;
+  display: flex;
+  flex-direction: row;
 }
 
 .criterios {
-    flex: 1;
+  flex: 1;
 }
 
 .card-TafM-fixo h2 {
-    color: #1B365D;
-}
-
-.lista-execucao li {
-    color: #1B365D;
-    font-weight: bold;
+  color: var(--color-primary);
 }
 
 .card-TafM-fixo p {
-    color: #4A5568;
+  color: var(--color-text);
+}
+
+.lista-execucao li {
+  padding: 20px;
+  color: var(--color-primary);
+  font-weight: bold;
 }
 
 
-/*Fim da PAgina TAF Masculino Soldado*/
 
 
-/*pagina onde faz download das provas e gabritos soldado*/
-
+/* ==========================================================
+   8) PÁGINA - DOWNLOAD PROVAS/GABARITOS (Soldado)
+   ========================================================== */
 .cards-container-soldado {
-    margin: 30px 60px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 150px;
 }
 
 .card-soldado {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 2px solid #1B365D;
-    border-radius: 12px;
-    padding: 60px;
-    background-color: #FFFFFF;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    width: 200px;
-    margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-med);
+  align-items: flex-start;
+  width: 350px;
+  height: 250px;
+  margin-top: 20px;
+  margin-right: 40px;
+  padding: 10px;
+  gap: 20px;
+  padding: 15px 20px;
+}
+
+.card-soldado p {
+  color: #1B365D;
+  font-weight: bold;
+  margin-right: auto;
+}
+.provaicone {
+  width:40px;
+}
+
+.badges {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.badges-group {
+  display: flex;
+  flex-direction: row;
+  gap: 95px;
+}
+.badge-blue {
+  background: #1B365D;
+  color: #fff;
+  font-size: 10px;
+  border-radius: 2px;
+  padding: 5px;
+  transition: 5s ease;
+}
+
+.badge-gray {
+  background: #E5E7EB;
+  font-size: 10px;
+  border-radius: 2px;
+  padding: 5px;
+}
+
+.badges-texto {
+  transition: 0.5s ease;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.data-card {
+  font-size: 12px;
 }
 
 
-/*fim da pagina download prova e gabarito soldado*/
+
+.badges-down {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  margin-top: 30px;
+  align-items: last baseline;
+}
+
