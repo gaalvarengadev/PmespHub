@@ -209,7 +209,9 @@ footer {
     background-color: #0A192F;
 }
 
+
 /*pop up do tipo*/
+
 
 /* garante que o dialog fique no centro */
 
@@ -266,8 +268,6 @@ footer {
 }
 
 
-
-
 /*pagina do TAF Masculinos*/
 
 .introduction {
@@ -295,7 +295,6 @@ footer {
     flex-direction: row;
     gap: 20px;
     justify-content: space-around;
-
 }
 
 .card-TafM {
@@ -315,9 +314,7 @@ footer {
     transition: 0.6s;
 }
 
-
 .card-TafM a {
-
     background-color: #ffffff;
     color: rgb(0, 0, 0);
     padding: 10px 20px;
@@ -337,6 +334,7 @@ footer {
     font-size: 18px;
 }
 
+
 /*configuração das imagens dos cards dos exercicios*/
 
 .exercicio {
@@ -353,6 +351,7 @@ footer {
 
 
 /*Pagina TAF MAsculino Soldado*/
+
 .fundo-pagina-TafSoldado {
     display: flex;
     flex-direction: column;
@@ -396,7 +395,7 @@ footer {
     color: #1B365D;
 }
 
-.lista-execucao li{
+.lista-execucao li {
     color: #1B365D;
     font-weight: bold;
 }
@@ -404,4 +403,33 @@ footer {
 .card-TafM-fixo p {
     color: #4A5568;
 }
+
+
 /*Fim da PAgina TAF Masculino Soldado*/
+
+
+/*pagina onde faz download das provas e gabritos soldado*/
+
+.cards-container-soldado {
+    margin: 30px 60px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.card-soldado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #1B365D;
+    border-radius: 12px;
+    padding: 60px;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    width: 200px;
+    margin: 20px;
+}
+
+
+/*fim da pagina download prova e gabarito soldado*/
