@@ -118,10 +118,8 @@ footer {
 
 /* Cards (genéricos) */
 .cards-container {
-  margin: 30px 60px;
+  margin: 30px 0px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
   align-items: center;
 }
 
@@ -140,6 +138,8 @@ footer {
 
   transition: transform var(--transition-med);
   width: 200px;
+
+  margin-left: 60px;
 }
 
 .card:hover {
@@ -490,5 +490,34 @@ footer {
   gap: 50px;
   margin-top: 30px;
   align-items: last baseline;
+}
+
+/* ==========================================================
+   9) SEÇÃO - EDITAIS (informações base dos 2 concursos mais download do ultimo edital publico)
+   ========================================================== */
+
+.paragrafo-pagina-edital {
+    margin: 20px 0px;
+}
+
+.detalhes-concurso {
+    margin: 20px 0px;
+}
+
+.linha-detalhes {
+    list-style: square;  
+    margin-bottom: 25px;
+    
+}
+
+.title-linha {
+    font-weight: bold;
+    padding-right: 5px;
+    color:#1B365D ;
+
+}
+
+.title-topico-edital {
+  color: #1B365D;
 }
 
